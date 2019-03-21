@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  pmd-dev:
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    entrypoint: tail -f /dev/null
+    volumes:
+    - type: bind
+      source: ../../
+      target: /data
+    networks:
+    - pmd_net
+    container_name: pmd-dev
+
+networks:
+  pmd_net:
